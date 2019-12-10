@@ -17,12 +17,20 @@
     document.querySelector("canvas").style.background = randomColor();
 
   }
+  function onMouseDown(event){
+  var randompoint= Point.random();
+    var newMaxPoint= new Point(view.size.width, view.size.height);
+    console.log(newMaxPoint);
+    var point = newMaxPoint*randompoint;
+    var fade = new Path.Circle(new Point(point, 100), 25).fillColor = randomColor();
+    document.querySelector("canvas").style.background = randomColor();
+  }
    var animateCircle = new Path.Circle(new Point(300,300),100);
      animateCircle.fillColor="red";
   function onFrame(event){
 
     animateCircle.fillColor.hue +=1;
-    
+
   }
     function randomColor() {
       var r = Math.floor(Math.random() * 256);
